@@ -2,30 +2,41 @@ from utils import Task, Gant_chart, Ready_queue
 
 def FCFS(tasks):
     """
+    Args:
+        tasks (list of Task)
     """
+    # arrival_time 기준으로 sorting.
     tasks = sorted(tasks, key = lambda x: (x.arrival_time))
     gant = Gant_chart()
     current_time = tasks[0].arrival_time
+
+    # gant_chart에 시작 시점 기록
     gant.start(current_time)
 
     for task in tasks:
+        # 각 task 별로 waiting_time, response_time, turnaround_time 저장
         task.waiting_time = current_time-task.arrival_time
         task.response_time = current_time-task.arrival_time
         current_time += task.burst_time
         task.turnaround_time = current_time-task.arrival_time
+
+        # gant chart 기록
         gant.add(task.pid, task.burst_time)
 
-    gant.rearrange()
     return gant
 
 def SJF(tasks):
     """
+    Args:
+        tasks (list of Task)
     """
+    # arrival_time 기준으로 sorting.
     tasks = sorted(tasks, key = lambda x: (x.arrival_time))
     gant = Gant_chart()
     current_time = tasks[0].arrival_time
     gant.start(current_time)
 
+    # ready_queue 생성
     ready_queue = Ready_queue()
     while ready_queue or tasks:
         if not ready_queue:
@@ -43,18 +54,21 @@ def SJF(tasks):
             if tasks[0].arrival_time <= current_time:
                 task = tasks.pop(0)
                 ready_queue.insert_process(task, key=lambda x: (x.burst_time))
-    
-    gant.rearrange()
+
     return gant
 
 def SRTF(tasks):
     """
+    Args:
+        tasks (list of Task)
     """
+    # arrival_time 기준으로 sorting.
     tasks = sorted(tasks, key = lambda x: (x.arrival_time))
     gant = Gant_chart()
     current_time = tasks[0].arrival_time
     gant.start(current_time)
 
+    # ready_queue 생성
     ready_queue = Ready_queue()
     while ready_queue or tasks:
         if not ready_queue:
@@ -82,10 +96,15 @@ def SRTF(tasks):
             current_task.turnaround_time = current_time-current_task.arrival_time
             gant.add(current_task.pid, current_task.burst_time)
     
-    gant.rearrange()
     return gant
 
 def RR(tasks, t_q):
+    """
+    Args:
+        tasks (list of Task)
+        t_q (float) : time_quantum
+    """
+    # arrival_time 기준으로 sorting.
     tasks = sorted(tasks, key = lambda x: (x.arrival_time))
     gant = Gant_chart()
     current_time = tasks[0].arrival_time
@@ -110,17 +129,20 @@ def RR(tasks, t_q):
 
             tasks.append(current_task)
 
-    gant.rearrange()
     return gant
 
 def priority(tasks):
     """
+    Args:
+        tasks (list of Task)
     """
+    # arrival_time 기준으로 sorting.
     tasks = sorted(tasks, key = lambda x: (x.arrival_time))
     gant = Gant_chart()
     current_time = tasks[0].arrival_time
     gant.start(current_time)
 
+    # ready_queue 생성
     ready_queue = Ready_queue()
     while ready_queue or tasks:
         if not ready_queue:
@@ -139,17 +161,20 @@ def priority(tasks):
                 task = tasks.pop(0)
                 ready_queue.insert_process(task, key=lambda x: (x.priority))
     
-    gant.rearrange()
     return gant 
 
 def preemptive_priority(tasks):
     """
+    Args:
+        tasks (list of Task)
     """
+    # arrival_time 기준으로 sorting.
     tasks = sorted(tasks, key = lambda x: (x.arrival_time))
     gant = Gant_chart()
     current_time = tasks[0].arrival_time
     gant.start(current_time)
 
+    # ready_queue 생성
     ready_queue = Ready_queue()
     while ready_queue or tasks:
         if not ready_queue:
@@ -175,15 +200,21 @@ def preemptive_priority(tasks):
             current_task.turnaround_time = current_time-current_task.arrival_time
             gant.add(current_task.pid, current_task.burst_time)
     
-    gant.rearrange()
     return gant
 
 def priority_RR(tasks, t_q):
+    """
+    Args:
+        tasks (list of Task)
+        t_q (float) : time quantum
+    """
+    # arrival_time 기준으로 sorting.
     tasks = sorted(tasks, key = lambda x: (x.arrival_time))
     gant = Gant_chart()
     current_time = tasks[0].arrival_time
     gant.start(current_time)
 
+    # ready_queue 생성
     ready_queue = Ready_queue()
     while ready_queue or tasks:
         if not ready_queue:
@@ -215,7 +246,6 @@ def priority_RR(tasks, t_q):
         if current_task:
             ready_queue.insert_process(current_task, key=lambda x: (x.priority))
 
-    gant.rearrange()
     return gant
 
 if __name__ == "__main__":

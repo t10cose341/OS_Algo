@@ -1,4 +1,11 @@
-class Task:
+class Task:    
+    """ 
+    Args:
+        pid (int or str): process ID
+        arrival_time (float): arrival_time
+        burst_time (float): burst_time
+        priority (None Or int): priority
+    """
     def __init__(self, pid, arrival_time, burst_time, priority=None):
         self.pid = pid
         self.arrival_time = arrival_time
@@ -20,29 +27,33 @@ class Gant_chart:
         self.start_time = 0
     
     def start(self, start_time):
-        self.start_time = start_time
+        """processor 사용 시작 시점 기록.
+        Args:
+            start_time (float): 시작 시점
+        """
+        if start_time:
+            raise
+        else:
+            self.start_time = start_time
 
     def add(self, pid, used_time):
-        self.pids.append(pid)
-        self.used_times.append(used_time)
-
-    def rearrange(self):
-        new_pids = []
-        new_times = []
-        pre_pid = None
-        for pid, time in zip(self.pids, self.used_times):
-            if time==0 or pre_pid==pid:
-                pass
+        """ 현재 사용한 pid와 burst_time 저장
+        Args:
+            pid (int or str): process ID
+            used_time (float): used_time
+        """
+        if used_time == 0:
+            pass
+        else:
+            if self.pids[-1] == pid:
+                self.used_times[-1] += used_time
             else:
-                new_pids.append(pid)
-                new_times.append(time)
-
-            pre_pid = pid
-
-        self.pids = new_pids
-        self.used_times = new_times
+                self.pids.append(pid)
+                self.used_times.append(used_time)
 
     def draw(self):
+        """ (임시)gant chart 출력
+        """
         print("|", end='')
         for time in self.used_times:
             print("-"*time, end='|')
@@ -53,6 +64,9 @@ class Gant_chart:
         print()
 
 class Ready_queue(list):
+    """
+    process를 정해진 우선순위에 따라 정렬하면서 사용하기 위한 ready_queue.
+    """
     def insert_process(self, process, key):
         # 늦게 들어온 process를 더 뒤로 배치
         insert_check = 0
@@ -66,6 +80,7 @@ class Ready_queue(list):
         if insert_check==0:
             self.insert(0, process)
 
+# 각종 average time 계산 함수
 
 def get_AWT(tasks):
     return sum([task.waiting_time for task in tasks])/len(tasks)
