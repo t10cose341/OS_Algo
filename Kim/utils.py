@@ -72,16 +72,19 @@ class Ready_queue(list):
     """
     def insert_process(self, process, key):
         # 늦게 들어온 process를 더 뒤로 배치
-        insert_check = 0
-        for i in reversed(range(len(self))):
-            if key(self[i]) > key(process):
-                continue
-            else:
-                self.insert(i+1, process)
-                insert_check = 1
-                break
-        if insert_check==0:
-            self.insert(0, process)
+        if key is None:
+            self.append(process)
+        else:
+            insert_check = 0
+            for i in reversed(range(len(self))):
+                if key(self[i]) > key(process):
+                    continue
+                else:
+                    self.insert(i+1, process)
+                    insert_check = 1
+                    break
+            if insert_check==0:
+                self.insert(0, process)
 
 # 각종 average time 계산 함수
 
