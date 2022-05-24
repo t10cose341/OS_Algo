@@ -45,7 +45,10 @@ class Gant_chart:
         if used_time == 0:
             pass
         else:
-            if self.pids[-1] == pid:
+            if len(self.pids) == 0:
+                self.pids.append(pid)
+                self.used_times.append(used_time)
+            elif self.pids[-1] == pid:
                 self.used_times[-1] += used_time
             else:
                 self.pids.append(pid)
