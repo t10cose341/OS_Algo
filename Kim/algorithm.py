@@ -9,10 +9,7 @@ def FCFS(tasks):
     # arrival_time 기준으로 sorting.
     tasks = sorted(tasks, key = lambda x: (x.arrival_time))
     gant = Gant_chart()
-    current_time = tasks[0].arrival_time
-
-    # gant_chart에 시작 시점 기록
-    gant.start(current_time)
+    current_time = 0
 
     for task in tasks:
         # 각 task 별로 waiting_time, response_time, turnaround_time 저장
@@ -39,8 +36,7 @@ def SJF(tasks):
     # arrival_time 기준으로 sorting.
     tasks = sorted(tasks, key = lambda x: (x.arrival_time))
     gant = Gant_chart()
-    current_time = tasks[0].arrival_time
-    gant.start(current_time)
+    current_time = 0
 
     # ready_queue 생성
     ready_queue = Ready_queue()
@@ -76,8 +72,7 @@ def SRTF(tasks):
     # arrival_time 기준으로 sorting.
     tasks = sorted(tasks, key = lambda x: (x.arrival_time))
     gant = Gant_chart()
-    current_time = tasks[0].arrival_time
-    gant.start(current_time)
+    current_time = 0
 
     # ready_queue 생성
     ready_queue = Ready_queue()
@@ -121,8 +116,7 @@ def RR(tasks, t_q):
     # arrival_time 기준으로 sorting.
     tasks = sorted(tasks, key = lambda x: (x.arrival_time))
     gant = Gant_chart()
-    current_time = tasks[0].arrival_time
-    gant.start(current_time)
+    current_time = 0
 
     # ready_queue 생성
     ready_queue = Ready_queue()
@@ -171,8 +165,7 @@ def priority(tasks):
     # arrival_time 기준으로 sorting.
     tasks = sorted(tasks, key = lambda x: (x.arrival_time))
     gant = Gant_chart()
-    current_time = tasks[0].arrival_time
-    gant.start(current_time)
+    current_time = 0
 
     # ready_queue 생성
     ready_queue = Ready_queue()
@@ -208,8 +201,7 @@ def preemptive_priority(tasks):
     # arrival_time 기준으로 sorting.
     tasks = sorted(tasks, key = lambda x: (x.arrival_time))
     gant = Gant_chart()
-    current_time = tasks[0].arrival_time
-    gant.start(current_time)
+    current_time = 0
 
     # ready_queue 생성
     ready_queue = Ready_queue()
@@ -253,8 +245,7 @@ def priority_RR(tasks, t_q):
     # arrival_time 기준으로 sorting.
     tasks = sorted(tasks, key = lambda x: (x.arrival_time))
     gant = Gant_chart()
-    current_time = tasks[0].arrival_time
-    gant.start(current_time)
+    current_time = 0
 
     # ready_queue 생성
     ready_queue = Ready_queue()
@@ -290,7 +281,7 @@ def priority_RR(tasks, t_q):
                 ready_queue.insert_process(task, key=lambda x: (x.priority))
             else:
                 break
-            
+
         if current_task.burst_time != 0:
             ready_queue.insert_process(current_task, key=lambda x: (x.priority))
 
@@ -299,7 +290,7 @@ def priority_RR(tasks, t_q):
 if __name__ == "__main__":
     from utils import get_AWT, get_ART, get_ATT
     processes_sample = []
-    processes_sample.append(Task(0, 0, 3, 4))
+    processes_sample.append(Task(0, 1, 3, 4))
     processes_sample.append(Task(1, 1, 2, 3))
     processes_sample.append(Task(2, 7, 2, 2))
     # processes_sample.append(Task(3, 5, 5, 2))
@@ -313,8 +304,8 @@ if __name__ == "__main__":
     # gant = SRTF(processes_sample)
     # gant = RR(processes_sample,1)
     # gant = priority(processes_sample)
-    # gant = preemptive_priority(processes_sample)
-    gant = priority_RR(processes_sample,1)
+    gant = preemptive_priority(processes_sample)
+    # gant = priority_RR(processes_sample,1)
     gant.draw()
 
     print("AWT: ", get_AWT(processes_sample))

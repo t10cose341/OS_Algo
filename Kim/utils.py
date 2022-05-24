@@ -24,17 +24,17 @@ class Gant_chart:
     def __init__(self):
         self.pids = []
         self.used_times = []
-        self.start_time = 0
+    #     self.start_time = 0
     
-    def start(self, start_time):
-        """processor 사용 시작 시점 기록.
-        Args:
-            start_time (float): 시작 시점
-        """
-        if start_time:
-            raise
-        else:
-            self.start_time = start_time
+    # def start(self, start_time):
+    #     """processor 사용 시작 시점 기록.
+    #     Args:
+    #         start_time (float): 시작 시점
+    #     """
+    #     if start_time:
+    #         raise
+    #     else:
+            # self.start_time = start_time
 
     def add(self, pid, used_time):
         """ 현재 사용한 pid와 burst_time 저장
