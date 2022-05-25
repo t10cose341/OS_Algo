@@ -5,14 +5,13 @@ from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.uic import loadUiType
-from decimal import Decimal
 from utils import *
 
 UI = loadUiType('Scheduler.ui')[0]
 
 class Main(QMainWindow , UI):
 
-    scale = 20.
+    scale = 50.0
 
     def __init__(self,parent=None):
         super(Main, self).__init__(parent)
@@ -317,38 +316,38 @@ class Main(QMainWindow , UI):
             self.graphicsView.setScene(scene)
             scale = Main.scale
             pen = QtGui.QPen(QtCore.Qt.black, 3)
-            arr = list(itertools.accumulate(gant.used_times))
-            arr2 = gant.pids
-            for i in range(len(arr)):
+            times = list(itertools.accumulate(gant.used_times))
+            pids = gant.pids
+            for i in range(len(times)):
                 if i == 0:
-                    mytext2 = QGraphicsSimpleTextItem('0')
-                    scene.addItem(mytext2)
-                    mytext2.setPos(0, 85)
-                    mytext2.setScale(1.3)
-                    mytext2 = QGraphicsSimpleTextItem(str(arr[0]))
-                    scene.addItem(mytext2)
-                    mytext2.setPos(arr[0] * scale, 85)
-                    mytext2.setScale(1.3)
-                    r = QtCore.QRectF(QtCore.QPointF(10, 0), QtCore.QSizeF(arr[0] * scale, 80))
+                    timetext = QGraphicsSimpleTextItem('0.0')
+                    scene.addItem(timetext)
+                    timetext.setPos(0, 85)
+                    timetext.setScale(1.5)
+                    timetext = QGraphicsSimpleTextItem(str(float(times[0])))
+                    scene.addItem(timetext)
+                    timetext.setPos(times[0] * scale, 85)
+                    timetext.setScale(1.5)
+                    r = QtCore.QRectF(QtCore.QPointF(10, 0), QtCore.QSizeF(times[0] * scale, 80))
                     scene.addRect(r, pen)
-                    mytext1 = QGraphicsSimpleTextItem(str(arr2[0]))
-                    scene.addItem(mytext1)
-                    mytext1.setPos(scale * (arr[0] + 0) / 2, 30)
-                    mytext1.setScale(1.5)
+                    process_text = QGraphicsSimpleTextItem(str(pids[0]))
+                    scene.addItem(process_text)
+                    process_text.setPos(scale * (times[0] + 0) / 2, 30)
+                    process_text.setScale(0.8)
 
                 else:
-                    r = QtCore.QRectF(QtCore.QPointF(10, 0), QtCore.QSizeF(arr[i] * scale, 80))
+                    r = QtCore.QRectF(QtCore.QPointF(10, 0), QtCore.QSizeF(times[i] * scale, 80))
                     scene.addRect(r, pen)
 
-                    mytext1 = QGraphicsSimpleTextItem(str(arr2[i]))
-                    scene.addItem(mytext1)
-                    mytext1.setPos(scale * (arr[i] + arr[i - 1]) / 2, 30)
-                    mytext1.setScale(1.5)
+                    process_text = QGraphicsSimpleTextItem(str(pids[i]))
+                    scene.addItem(process_text)
+                    process_text.setPos(scale * (times[i] + times[i - 1]) / 2, 30)
+                    process_text.setScale(0.8)
 
-                    mytext2 = QGraphicsSimpleTextItem(str(arr[i]))
-                    scene.addItem(mytext2)
-                    mytext2.setPos(arr[i] * scale, 85)
-                    mytext2.setScale(1.3)
+                    timetext = QGraphicsSimpleTextItem(str(float(times[i])))
+                    scene.addItem(timetext)
+                    timetext.setPos(times[i] * scale, 85)
+                    timetext.setScale(1.5)
 
             self.lineEdit_2.setText('  '+str("%.2f" % (get_ART(tasks))))
             self.lineEdit_31.setText('  '+str("%.2f" % (get_AWT(tasks))))
@@ -435,41 +434,41 @@ class Main(QMainWindow , UI):
                     else:
                         break
 
-            arr, arr2 = list(itertools.accumulate(gant.used_times)), gant.pids
+            times, pids = list(itertools.accumulate(gant.used_times)), gant.pids
             scene = QtWidgets.QGraphicsScene()
             self.graphicsView_3.setScene(scene)
             scale = Main.scale
             pen = QtGui.QPen(QtCore.Qt.black, 3)
-            for i in range(len(arr)):
+            for i in range(len(times)):
                 if i == 0:
-                    mytext2 = QGraphicsSimpleTextItem('0')
-                    scene.addItem(mytext2)
-                    mytext2.setPos(0, 85)
-                    mytext2.setScale(1.3)
-                    mytext2 = QGraphicsSimpleTextItem(str(arr[0]))
-                    scene.addItem(mytext2)
-                    mytext2.setPos(arr[0] * scale, 85)
-                    mytext2.setScale(1.3)
-                    r = QtCore.QRectF(QtCore.QPointF(10, 0), QtCore.QSizeF(arr[0] * scale, 80))
+                    timtext = QGraphicsSimpleTextItem('0')
+                    scene.addItem(timtext)
+                    timtext.setPos(0, 85)
+                    timtext.setScale(1.5)
+                    timtext = QGraphicsSimpleTextItem(str(times[0]))
+                    scene.addItem(timtext)
+                    timtext.setPos(times[0] * scale, 85)
+                    timtext.setScale(1.5)
+                    r = QtCore.QRectF(QtCore.QPointF(10, 0), QtCore.QSizeF(times[0] * scale, 80))
                     scene.addRect(r, pen)
-                    mytext1 = QGraphicsSimpleTextItem(str(arr2[0]))
-                    scene.addItem(mytext1)
-                    mytext1.setPos(scale * (arr[0] + 0) / 2, 30)
-                    mytext1.setScale(1.5)
+                    process_text = QGraphicsSimpleTextItem(str(pids[0]))
+                    scene.addItem(process_text)
+                    process_text.setPos(scale * (times[0] + 0) / 2, 30)
+                    process_text.setScale(0.8)
 
                 else:
-                    r = QtCore.QRectF(QtCore.QPointF(10, 0), QtCore.QSizeF(arr[i] * scale, 80))
+                    r = QtCore.QRectF(QtCore.QPointF(10, 0), QtCore.QSizeF(times[i] * scale, 80))
                     scene.addRect(r, pen)
 
-                    mytext1 = QGraphicsSimpleTextItem(str(arr2[i]))
-                    scene.addItem(mytext1)
-                    mytext1.setPos(scale * (arr[i] + arr[i - 1]) / 2, 30)
-                    mytext1.setScale(1.5)
+                    process_text = QGraphicsSimpleTextItem(str(pids[i]))
+                    scene.addItem(process_text)
+                    process_text.setPos(scale * (times[i] + times[i - 1]) / 2, 30)
+                    process_text.setScale(0.8)
 
-                    mytext2 = QGraphicsSimpleTextItem(str(arr[i]))
-                    scene.addItem(mytext2)
-                    mytext2.setPos(arr[i] * scale, 85)
-                    mytext2.setScale(1.3)
+                    timetext = QGraphicsSimpleTextItem(str(float(times[i])))
+                    scene.addItem(timetext)
+                    timtext.setPos(times[i] * scale, 85)
+                    timtext.setScale(1.5)
 
             self.lineEdit_6.setText('  '+str("%.2f" % (get_ART(task_scores))))
             self.lineEdit_35.setText('  '+str("%.2f" % (get_AWT(task_scores))))
@@ -564,39 +563,39 @@ class Main(QMainWindow , UI):
             self.graphicsView_4.setScene(scene)
             scale = Main.scale
             pen = QtGui.QPen(QtCore.Qt.black, 3)
-            arr = list(itertools.accumulate(gant.used_times))
-            arr2 = gant.pids
+            times = list(itertools.accumulate(gant.used_times))
+            pids = gant.pids
 
-            for i in range(len(arr)):
+            for i in range(len(times)):
                 if i == 0:
-                    mytext2 = QGraphicsSimpleTextItem('0')
-                    scene.addItem(mytext2)
-                    mytext2.setPos(0, 85)
-                    mytext2.setScale(1.3)
-                    mytext2 = QGraphicsSimpleTextItem(str(arr[0]))
-                    scene.addItem(mytext2)
-                    mytext2.setPos(arr[0] * scale, 85)
-                    mytext2.setScale(1.3)
-                    r = QtCore.QRectF(QtCore.QPointF(10, 0), QtCore.QSizeF(arr[0] * scale, 80))
+                    timetext = QGraphicsSimpleTextItem('0.0')
+                    scene.addItem(timetext)
+                    timetext.setPos(0, 85)
+                    timetext.setScale(1.5)
+                    timetext = QGraphicsSimpleTextItem(str(float(times[0])))
+                    scene.addItem(timetext)
+                    timetext.setPos(times[0] * scale, 85)
+                    timetext.setScale(1.5)
+                    r = QtCore.QRectF(QtCore.QPointF(10, 0), QtCore.QSizeF(times[0] * scale, 80))
                     scene.addRect(r, pen)
-                    mytext1 = QGraphicsSimpleTextItem(str(arr2[0]))
-                    scene.addItem(mytext1)
-                    mytext1.setPos(scale * (arr[0] + 0) / 2, 30)
-                    mytext1.setScale(1.5)
+                    process_text = QGraphicsSimpleTextItem(str(pids[0]))
+                    scene.addItem(process_text)
+                    process_text.setPos(scale * (times[0] + 0) / 2, 30)
+                    process_text.setScale(0.8)
 
                 else:
-                    r = QtCore.QRectF(QtCore.QPointF(10, 0), QtCore.QSizeF(arr[i] * scale, 80))
+                    r = QtCore.QRectF(QtCore.QPointF(10, 0), QtCore.QSizeF(times[i] * scale, 80))
                     scene.addRect(r, pen)
 
-                    mytext1 = QGraphicsSimpleTextItem(str(arr2[i]))
-                    scene.addItem(mytext1)
-                    mytext1.setPos(scale * (arr[i] + arr[i - 1]) / 2, 30)
-                    mytext1.setScale(1.5)
+                    process_text = QGraphicsSimpleTextItem(str(pids[i]))
+                    scene.addItem(process_text)
+                    process_text.setPos(scale * (times[i] + times[i - 1]) / 2, 30)
+                    process_text.setScale(0.8)
 
-                    mytext2 = QGraphicsSimpleTextItem(str(arr[i]))
-                    scene.addItem(mytext2)
-                    mytext2.setPos(arr[i] * scale, 85)
-                    mytext2.setScale(1.3)
+                    timetext = QGraphicsSimpleTextItem(str(float(times[i])))
+                    scene.addItem(timetext)
+                    timetext.setPos(times[i] * scale, 85)
+                    timetext.setScale(1.5)
 
             self.lineEdit_8.setText('  '+str("%.2f" % (get_ART(task_scores))))
             self.lineEdit_37.setText('  '+str("%.2f" % (get_AWT(task_scores))))
@@ -691,38 +690,38 @@ class Main(QMainWindow , UI):
             self.graphicsView_5.setScene(scene)
             scale = Main.scale
             pen = QtGui.QPen(QtCore.Qt.black, 3)
-            arr = list(itertools.accumulate(gant.used_times))
-            arr2 = gant.pids
-            for i in range(len(arr)):
+            times = list(itertools.accumulate(gant.used_times))
+            pids = gant.pids
+            for i in range(len(times)):
                 if i == 0:
-                    mytext2 = QGraphicsSimpleTextItem('0')
-                    scene.addItem(mytext2)
-                    mytext2.setPos(0, 85)
-                    mytext2.setScale(1.3)
-                    mytext2 = QGraphicsSimpleTextItem(str(arr[0]))
-                    scene.addItem(mytext2)
-                    mytext2.setPos(arr[0] * scale, 85)
-                    mytext2.setScale(1.3)
-                    r = QtCore.QRectF(QtCore.QPointF(10, 0), QtCore.QSizeF(arr[0] * scale, 80))
+                    timetext = QGraphicsSimpleTextItem('0.0')
+                    scene.addItem(timetext)
+                    timetext.setPos(0, 85)
+                    timetext.setScale(1.5)
+                    timetext = QGraphicsSimpleTextItem(str(float(times[0])))
+                    scene.addItem(timetext)
+                    timetext.setPos(times[0] * scale, 85)
+                    timetext.setScale(1.5)
+                    r = QtCore.QRectF(QtCore.QPointF(10, 0), QtCore.QSizeF(times[0] * scale, 80))
                     scene.addRect(r, pen)
-                    mytext1 = QGraphicsSimpleTextItem(str(arr2[0]))
-                    scene.addItem(mytext1)
-                    mytext1.setPos(scale * (arr[0] + 0) / 2, 30)
-                    mytext1.setScale(1.5)
+                    process_text = QGraphicsSimpleTextItem(str(pids[0]))
+                    scene.addItem(process_text)
+                    process_text.setPos(scale * (times[0] + 0) / 2, 30)
+                    process_text.setScale(0.8)
 
                 else:
-                    r = QtCore.QRectF(QtCore.QPointF(10, 0), QtCore.QSizeF(arr[i] * scale, 80))
+                    r = QtCore.QRectF(QtCore.QPointF(10, 0), QtCore.QSizeF(times[i] * scale, 80))
                     scene.addRect(r, pen)
 
-                    mytext1 = QGraphicsSimpleTextItem(str(arr2[i]))
-                    scene.addItem(mytext1)
-                    mytext1.setPos(scale * (arr[i] + arr[i - 1]) / 2, 30)
-                    mytext1.setScale(1.5)
+                    process_text = QGraphicsSimpleTextItem(str(pids[i]))
+                    scene.addItem(process_text)
+                    process_text.setPos(scale * (times[i] + times[i - 1]) / 2, 30)
+                    process_text.setScale(0.8)
 
-                    mytext2 = QGraphicsSimpleTextItem(str(arr[i]))
-                    scene.addItem(mytext2)
-                    mytext2.setPos(arr[i] * scale, 85)
-                    mytext2.setScale(1.3)
+                    timetext = QGraphicsSimpleTextItem(str(float(times[i])))
+                    scene.addItem(timetext)
+                    timetext.setPos(times[i] * scale, 85)
+                    timetext.setScale(1.5)
 
             self.lineEdit_10.setText('  '+str("%.2f" % (get_ART(task_scores))))
             self.lineEdit_39.setText('  '+str("%.2f" % (get_AWT(task_scores))))
@@ -796,7 +795,7 @@ class Main(QMainWindow , UI):
 
 
             if float(self.lineEdit_13.text()) > 0:
-                t_q = Decimal(self.lineEdit_13.text())
+                t_q = float(self.lineEdit_13.text())
             else:
                 QMessageBox.information(self, "Warning", "Re-enter the processes")
                 return
@@ -850,37 +849,37 @@ class Main(QMainWindow , UI):
             self.graphicsView_2.setScene(scene)
             scale = Main.scale
             pen = QtGui.QPen(QtCore.Qt.black, 3)
-            arr, arr2 = list(itertools.accumulate(gant.used_times)), gant.pids
-            for i in range(len(arr)):
+            times, pids = list(itertools.accumulate(gant.used_times)), gant.pids
+            for i in range(len(times)):
                 if i == 0:
-                    mytext2 = QGraphicsSimpleTextItem('0')
-                    scene.addItem(mytext2)
-                    mytext2.setPos(0, 85)
-                    mytext2.setScale(1.3)
-                    mytext2 = QGraphicsSimpleTextItem(str(arr[0]))
-                    scene.addItem(mytext2)
-                    mytext2.setPos(arr[0] * scale, 85)
-                    mytext2.setScale(1.3)
-                    r = QtCore.QRectF(QtCore.QPointF(10, 0), QtCore.QSizeF(arr[0] * scale, 80))
+                    timetext = QGraphicsSimpleTextItem('0.0')
+                    scene.addItem(timetext)
+                    timetext.setPos(0, 85)
+                    timetext.setScale(1.5)
+                    timetext = QGraphicsSimpleTextItem(str(float(times[0])))
+                    scene.addItem(timetext)
+                    timetext.setPos(times[0] * scale, 85)
+                    timetext.setScale(1.5)
+                    r = QtCore.QRectF(QtCore.QPointF(10, 0), QtCore.QSizeF(times[0] * scale, 80))
                     scene.addRect(r, pen)
-                    mytext1 = QGraphicsSimpleTextItem(str(arr2[0]))
-                    scene.addItem(mytext1)
-                    mytext1.setPos(scale * (arr[0] + 0) / 2, 30)
-                    mytext1.setScale(1.5)
+                    process_text = QGraphicsSimpleTextItem(str(pids[0]))
+                    scene.addItem(process_text)
+                    process_text.setPos(scale * (times[0] + 0) / 2, 30)
+                    process_text.setScale(0.8)
 
                 else:
-                    r = QtCore.QRectF(QtCore.QPointF(10, 0), QtCore.QSizeF(arr[i] * scale, 80))
+                    r = QtCore.QRectF(QtCore.QPointF(10, 0), QtCore.QSizeF(times[i] * scale, 80))
                     scene.addRect(r, pen)
 
-                    mytext1 = QGraphicsSimpleTextItem(str(arr2[i]))
-                    scene.addItem(mytext1)
-                    mytext1.setPos(scale * (arr[i] + arr[i - 1]) / 2, 30)
-                    mytext1.setScale(1.5)
+                    process_text = QGraphicsSimpleTextItem(str(pids[i]))
+                    scene.addItem(process_text)
+                    process_text.setPos(scale * (times[i] + times[i - 1]) / 2, 30)
+                    process_text.setScale(0.8)
 
-                    mytext2 = QGraphicsSimpleTextItem(str(arr[i]))
-                    scene.addItem(mytext2)
-                    mytext2.setPos(arr[i] * scale, 85)
-                    mytext2.setScale(1.3)
+                    timetext = QGraphicsSimpleTextItem(str(float(times[i])))
+                    scene.addItem(timetext)
+                    timetext.setPos(times[i] * scale, 85)
+                    timetext.setScale(1.5)
 
             self.lineEdit_4.setText('  '+str("%.2f" % (get_ART(task_scores))))
             self.lineEdit_33.setText('  '+str("%.2f" % (get_AWT(task_scores))))
@@ -921,7 +920,7 @@ class Main(QMainWindow , UI):
 
 
             if float(self.lineEdit_29.text()) > 0:
-                t_q = Decimal(self.lineEdit_29.text())
+                t_q = float(self.lineEdit_29.text())
             else:
                 QMessageBox.information(self, "Warning", "Re-enter the processes")
                 return
@@ -976,37 +975,37 @@ class Main(QMainWindow , UI):
             self.graphicsView_13.setScene(scene)
             scale = Main.scale
             pen = QtGui.QPen(QtCore.Qt.black, 3)
-            arr, arr2 = list(itertools.accumulate(gant.used_times)), gant.pids
-            for i in range(len(arr)):
+            times, pids = list(itertools.accumulate(gant.used_times)), gant.pids
+            for i in range(len(times)):
                 if i == 0:
-                    mytext2 = QGraphicsSimpleTextItem('0')
-                    scene.addItem(mytext2)
-                    mytext2.setPos(0, 85)
-                    mytext2.setScale(1.3)
-                    mytext2 = QGraphicsSimpleTextItem(str(arr[0]))
-                    scene.addItem(mytext2)
-                    mytext2.setPos(arr[0] * scale, 85)
-                    mytext2.setScale(1.3)
-                    r = QtCore.QRectF(QtCore.QPointF(10, 0), QtCore.QSizeF(arr[0] * scale, 80))
+                    timetext = QGraphicsSimpleTextItem('0.0')
+                    scene.addItem(timetext)
+                    timetext.setPos(0, 85)
+                    timetext.setScale(1.5)
+                    timetext = QGraphicsSimpleTextItem(str(float(times[0])))
+                    scene.addItem(timetext)
+                    timetext.setPos(times[0] * scale, 85)
+                    timetext.setScale(1.5)
+                    r = QtCore.QRectF(QtCore.QPointF(10, 0), QtCore.QSizeF(times[0] * scale, 80))
                     scene.addRect(r, pen)
-                    mytext1 = QGraphicsSimpleTextItem(str(arr2[0]))
-                    scene.addItem(mytext1)
-                    mytext1.setPos(scale * (arr[0] + 0) / 2, 30)
-                    mytext1.setScale(1.5)
+                    process_text = QGraphicsSimpleTextItem(str(pids[0]))
+                    scene.addItem(process_text)
+                    process_text.setPos(scale * (times[0] + 0) / 2, 30)
+                    process_text.setScale(0.8)
 
                 else:
-                    r = QtCore.QRectF(QtCore.QPointF(10, 0), QtCore.QSizeF(arr[i] * scale, 80))
+                    r = QtCore.QRectF(QtCore.QPointF(10, 0), QtCore.QSizeF(times[i] * scale, 80))
                     scene.addRect(r, pen)
 
-                    mytext1 = QGraphicsSimpleTextItem(str(arr2[i]))
-                    scene.addItem(mytext1)
-                    mytext1.setPos(scale * (arr[i] + arr[i - 1]) / 2, 30)
-                    mytext1.setScale(1.5)
+                    process_text = QGraphicsSimpleTextItem(str(pids[i]))
+                    scene.addItem(process_text)
+                    process_text.setPos(scale * (times[i] + times[i - 1]) / 2, 30)
+                    process_text.setScale(0.8)
 
-                    mytext2 = QGraphicsSimpleTextItem(str(arr[i]))
-                    scene.addItem(mytext2)
-                    mytext2.setPos(arr[i] * scale, 85)
-                    mytext2.setScale(1.3)
+                    timetext = QGraphicsSimpleTextItem(str(float(times[i])))
+                    scene.addItem(timetext)
+                    timetext.setPos(times[i] * scale, 85)
+                    timetext.setScale(1.5)
 
             self.lineEdit_28.setText('  '+str("%.2f" % (get_ART(task_scores))))
             self.lineEdit_41.setText('  '+str("%.2f" % (get_AWT(task_scores))))
@@ -1108,37 +1107,37 @@ class Main(QMainWindow , UI):
             self.graphicsView_6.setScene(scene)
             scale = Main.scale
             pen = QtGui.QPen(QtCore.Qt.black, 3)
-            arr, arr2 = list(itertools.accumulate(gant.used_times)), gant.pids
-            for i in range(len(arr)):
+            times, pids = list(itertools.accumulate(gant.used_times)), gant.pids
+            for i in range(len(times)):
                 if i == 0:
-                    mytext2 = QGraphicsSimpleTextItem('0')
-                    scene.addItem(mytext2)
-                    mytext2.setPos(0, 85)
-                    mytext2.setScale(1.3)
-                    mytext2 = QGraphicsSimpleTextItem(str(arr[0]))
-                    scene.addItem(mytext2)
-                    mytext2.setPos(arr[0] * scale, 85)
-                    mytext2.setScale(1.3)
-                    r = QtCore.QRectF(QtCore.QPointF(10, 0), QtCore.QSizeF(arr[0] * scale, 80))
+                    timetext = QGraphicsSimpleTextItem('0.0')
+                    scene.addItem(timetext)
+                    timetext.setPos(0, 85)
+                    timetext.setScale(1.5)
+                    timetext = QGraphicsSimpleTextItem(str(float(times[0])))
+                    scene.addItem(timetext)
+                    timetext.setPos(times[0] * scale, 85)
+                    timetext.setScale(1.5)
+                    r = QtCore.QRectF(QtCore.QPointF(10, 0), QtCore.QSizeF(times[0] * scale, 80))
                     scene.addRect(r, pen)
-                    mytext1 = QGraphicsSimpleTextItem(str(arr2[0]))
-                    scene.addItem(mytext1)
-                    mytext1.setPos(scale * (arr[0] + 0) / 2, 30)
-                    mytext1.setScale(1.5)
+                    process_text = QGraphicsSimpleTextItem(str(pids[0]))
+                    scene.addItem(process_text)
+                    process_text.setPos(scale * (times[0] + 0) / 2, 30)
+                    process_text.setScale(0.8)
 
                 else:
-                    r = QtCore.QRectF(QtCore.QPointF(10, 0), QtCore.QSizeF(arr[i] * scale, 80))
+                    r = QtCore.QRectF(QtCore.QPointF(10, 0), QtCore.QSizeF(times[i] * scale, 80))
                     scene.addRect(r, pen)
 
-                    mytext1 = QGraphicsSimpleTextItem(str(arr2[i]))
-                    scene.addItem(mytext1)
-                    mytext1.setPos(scale * (arr[i] + arr[i - 1]) / 2, 30)
-                    mytext1.setScale(1.5)
+                    process_text = QGraphicsSimpleTextItem(str(times[i]))
+                    scene.addItem(process_text)
+                    process_text.setPos(scale * (times[i] + times[i - 1]) / 2, 30)
+                    process_text.setScale(0.8)
 
-                    mytext2 = QGraphicsSimpleTextItem(str(arr[i]))
-                    scene.addItem(mytext2)
-                    mytext2.setPos(arr[i] * scale, 85)
-                    mytext2.setScale(1.3)
+                    timetext = QGraphicsSimpleTextItem(str(float(times[i])))
+                    scene.addItem(timetext)
+                    timetext.setPos(times[i] * scale, 85)
+                    timetext.setScale(1.5)
 
             self.lineEdit_12.setText('  '+str("%.2f" % (get_ART(task_scores))))
             self.lineEdit_43.setText('  '+str("%.2f" % (get_AWT(task_scores))))
