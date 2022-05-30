@@ -5,16 +5,6 @@ process = []
 
 res = []
 
-
-inputNum = int(input("넣을 데이터의 개수 입력: "))
-for x in range(0, inputNum):
-    a = str(x+1)
-    name = 'P' + a
-    process[x].append(name)
-    process[x].append(int(x))
-    b = int(input("시간 초: "))
-    process[x].append(b)
-
 """
 
 
