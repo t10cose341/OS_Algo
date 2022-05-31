@@ -277,18 +277,18 @@ class Main(QMainWindow , UI):
                 if self.tableWidget_3.item(i, 0).text() not in tasks:
                     p_name = self.tableWidget_3.item(i, 0).text()
                 else:
-                    QMessageBox.information(self, "Warning", "Re-enter the processes")
+                    QMessageBox.information(self, "Warning", "Re-enter the process name")
                     return
 
-                if int(self.tableWidget_3.item(i, 1).text()) >= 0:
-                    arrival = int(self.tableWidget_3.item(i, 1).text())
+                if float(self.tableWidget_3.item(i, 1).text()) >= 0.0:
+                    arrival = float(self.tableWidget_3.item(i, 1).text())
                 else:
-                    QMessageBox.information(self, "Warning", "Re-enter the processes")
+                    QMessageBox.information(self, "Warning", "Re-enter the process arrival time")
                     return
-                if int(self.tableWidget_3.item(i, 2).text()) >= 0:
-                    bur = int(self.tableWidget_3.item(i, 2).text())
+                if float(self.tableWidget_3.item(i, 2).text()) >= 0.0:
+                    bur = float(self.tableWidget_3.item(i, 2).text())
                 else:
-                    QMessageBox.information(self, "Warning", "Re-enter the processes")
+                    QMessageBox.information(self, "Warning", "Re-enter the process burst time")
                     return
                 tasks.append(Task(p_name, arrival, bur))
 
@@ -355,7 +355,7 @@ class Main(QMainWindow , UI):
 
 
         except:
-            QMessageBox.information(self, "Warning", "Re-enter the processes")
+            QMessageBox.information(self, "Warning", "Re-enter the processes wtf")
 
 
     def Table_SJF(self):
@@ -391,13 +391,13 @@ class Main(QMainWindow , UI):
                     QMessageBox.information(self, "Warning", "Re-enter the processes")
                     return
 
-                if int(self.tableWidget_5.item(i, 1).text()) >= 0:
-                    arrival = int(self.tableWidget_5.item(i, 1).text())
+                if float(self.tableWidget_5.item(i, 1).text()) >= 0:
+                    arrival = float(self.tableWidget_5.item(i, 1).text())
                 else:
                     QMessageBox.information(self, "Warning", "Re-enter the processes")
                     return
-                if int(self.tableWidget_5.item(i, 2).text()) >= 0:
-                    bur = int(self.tableWidget_5.item(i, 2).text())
+                if float(self.tableWidget_5.item(i, 2).text()) >= 0:
+                    bur = float(self.tableWidget_5.item(i, 2).text())
                 else:
                     QMessageBox.information(self, "Warning", "Re-enter the processes")
                     return
@@ -441,7 +441,7 @@ class Main(QMainWindow , UI):
             pen = QtGui.QPen(QtCore.Qt.black, 3)
             for i in range(len(times)):
                 if i == 0:
-                    timtext = QGraphicsSimpleTextItem('0')
+                    timtext = QGraphicsSimpleTextItem('0.0')
                     scene.addItem(timtext)
                     timtext.setPos(0, 85)
                     timtext.setScale(1.5)
@@ -467,8 +467,8 @@ class Main(QMainWindow , UI):
 
                     timetext = QGraphicsSimpleTextItem(str(float(times[i])))
                     scene.addItem(timetext)
-                    timtext.setPos(times[i] * scale, 85)
-                    timtext.setScale(1.5)
+                    timetext.setPos(times[i] * scale, 85)
+                    timetext.setScale(1.5)
 
             self.lineEdit_6.setText('  '+str("%.2f" % (get_ART(task_scores))))
             self.lineEdit_35.setText('  '+str("%.2f" % (get_AWT(task_scores))))
@@ -509,13 +509,13 @@ class Main(QMainWindow , UI):
                     QMessageBox.information(self, "Warning", "Re-enter the processes")
                     return
 
-                if int(self.tableWidget_6.item(i, 1).text()) >= 0:
-                    arrival = int(self.tableWidget_6.item(i, 1).text())
+                if float(self.tableWidget_6.item(i, 1).text()) >= 0:
+                    arrival = float(self.tableWidget_6.item(i, 1).text())
                 else:
                     QMessageBox.information(self, "Warning", "Re-enter the processes")
                     return
-                if int(self.tableWidget_6.item(i, 2).text()) >= 0:
-                    bur = int(self.tableWidget_6.item(i, 2).text())
+                if float(self.tableWidget_6.item(i, 2).text()) >= 0:
+                    bur = float(self.tableWidget_6.item(i, 2).text())
                 else:
                     QMessageBox.information(self, "Warning", "Re-enter the processes")
                     return
@@ -637,18 +637,18 @@ class Main(QMainWindow , UI):
                     QMessageBox.information(self, "Warning", "Re-enter the processes")
                     return
 
-                if int(self.tableWidget_7.item(i, 1).text()) >= 0:
-                    arrival = int(self.tableWidget_7.item(i, 1).text())
+                if float(self.tableWidget_7.item(i, 1).text()) >= 0:
+                    arrival = float(self.tableWidget_7.item(i, 1).text())
                 else:
                     QMessageBox.information(self, "Warning", "Re-enter the processes")
                     return
-                if int(self.tableWidget_7.item(i, 2).text()) >= 0:
-                    bur = int(self.tableWidget_7.item(i, 2).text())
+                if float(self.tableWidget_7.item(i, 2).text()) >= 0:
+                    bur = float(self.tableWidget_7.item(i, 2).text())
                 else:
                     QMessageBox.information(self, "Warning", "Re-enter the processes")
                     return
-                if int(self.tableWidget_7.item(i, 3).text()) >= 0:
-                    priority = int(self.tableWidget_7.item(i, 3).text())
+                if float(self.tableWidget_7.item(i, 3).text()) >= 0:
+                    priority = float(self.tableWidget_7.item(i, 3).text())
                 else:
                     QMessageBox.information(self, "Warning", "Re-enter the processes")
                     return
@@ -781,13 +781,13 @@ class Main(QMainWindow , UI):
                     QMessageBox.information(self, "Warning", "Re-enter the processes")
                     return
 
-                if int(self.tableWidget_9.item(i, 1).text()) >= 0:
-                    arrival = int(self.tableWidget_9.item(i, 1).text())
+                if float(self.tableWidget_9.item(i, 1).text()) >= 0:
+                    arrival = float(self.tableWidget_9.item(i, 1).text())
                 else:
                     QMessageBox.information(self, "Warning", "Re-enter the processes")
                     return
-                if int(self.tableWidget_9.item(i, 2).text()) >= 0:
-                    bur = int(self.tableWidget_9.item(i, 2).text())
+                if float(self.tableWidget_9.item(i, 2).text()) >= 0:
+                    bur = float(self.tableWidget_9.item(i, 2).text())
                 else:
                     QMessageBox.information(self, "Warning", "Re-enter the processes")
                     return
@@ -900,13 +900,13 @@ class Main(QMainWindow , UI):
                     QMessageBox.information(self, "Warning", "Re-enter the processes")
                     return
 
-                if int(self.tableWidget_15.item(i, 1).text()) >= 0:
-                    arrival = int(self.tableWidget_15.item(i, 1).text())
+                if float(self.tableWidget_15.item(i, 1).text()) >= 0:
+                    arrival = float(self.tableWidget_15.item(i, 1).text())
                 else:
                     QMessageBox.information(self, "Warning", "Re-enter the processes")
                     return
-                if int(self.tableWidget_15.item(i, 2).text()) >= 0:
-                    bur = int(self.tableWidget_15.item(i, 2).text())
+                if float(self.tableWidget_15.item(i, 2).text()) >= 0:
+                    bur = float(self.tableWidget_15.item(i, 2).text())
                 else:
                     QMessageBox.information(self, "Warning", "Re-enter the processes")
                     return
@@ -1048,18 +1048,18 @@ class Main(QMainWindow , UI):
                     QMessageBox.information(self, "Warning", "Re-enter the processes")
                     return
 
-                if int(self.tableWidget_8.item(i, 1).text()) >= 0:
-                    arrival = int(self.tableWidget_8.item(i, 1).text())
+                if float(self.tableWidget_8.item(i, 1).text()) >= 0:
+                    arrival = float(self.tableWidget_8.item(i, 1).text())
                 else:
                     QMessageBox.information(self, "Warning", "Re-enter the processes")
                     return
-                if int(self.tableWidget_8.item(i, 2).text()) >= 0:
-                    bur = int(self.tableWidget_8.item(i, 2).text())
+                if float(self.tableWidget_8.item(i, 2).text()) >= 0:
+                    bur = float(self.tableWidget_8.item(i, 2).text())
                 else:
                     QMessageBox.information(self, "Warning", "Re-enter the processes")
                     return
-                if int(self.tableWidget_8.item(i, 3).text()) >= 0:
-                    priority = int(self.tableWidget_8.item(i, 3).text())
+                if float(self.tableWidget_8.item(i, 3).text()) >= 0:
+                    priority = float(self.tableWidget_8.item(i, 3).text())
                 else:
                     QMessageBox.information(self, "Warning", "Re-enter the processes")
                     return
