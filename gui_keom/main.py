@@ -404,7 +404,7 @@ class Main(QMainWindow , UI):
                 tasks.append(Task(p_name, arrival, bur))
 
             # arrival_time 기준으로 sorting.
-            tasks = sorted(tasks, key = lambda x: (x.arrival_time))
+            tasks = sorted(tasks, key = lambda x: (x.arrival_time, x.burst_time))
             gant = Gant_chart()
             current_time = 0
 
@@ -655,7 +655,7 @@ class Main(QMainWindow , UI):
                 tasks.append(Task(p_name, arrival, bur, priority))
 
             # arrival_time 기준으로 sorting.
-            tasks = sorted(tasks, key = lambda x: (x.arrival_time))
+            tasks = sorted(tasks, key = lambda x: (x.arrival_time, x.priority))
             gant = Gant_chart()
             current_time = 0
 
@@ -926,7 +926,7 @@ class Main(QMainWindow , UI):
                 return
 
             # arrival_time 기준으로 sorting.
-            tasks = sorted(tasks, key = lambda x: (x.arrival_time))
+            tasks = sorted(tasks, key = lambda x: (x.arrival_time, x.priority))
             gant = Gant_chart()
             current_time = 0
 
