@@ -359,8 +359,8 @@ color: rgb(223, 223, 223);</string>
       <widget class="QLabel" name="label_3">
        <property name="geometry">
         <rect>
-         <x>530</x>
-         <y>430</y>
+         <x>560</x>
+         <y>410</y>
          <width>71</width>
          <height>31</height>
         </rect>
@@ -384,8 +384,8 @@ color: rgb(206, 206, 206);</string>
       <widget class="QLineEdit" name="lineEdit_2">
        <property name="geometry">
         <rect>
-         <x>610</x>
-         <y>430</y>
+         <x>630</x>
+         <y>410</y>
          <width>81</width>
          <height>31</height>
         </rect>
@@ -610,8 +610,8 @@ QTableWidget::item:hover {
       <widget class="QLineEdit" name="lineEdit_30">
        <property name="geometry">
         <rect>
-         <x>360</x>
-         <y>430</y>
+         <x>350</x>
+         <y>410</y>
          <width>81</width>
          <height>31</height>
         </rect>
@@ -635,7 +635,7 @@ QTableWidget::item:hover {
        <property name="geometry">
         <rect>
          <x>280</x>
-         <y>430</y>
+         <y>410</y>
          <width>71</width>
          <height>31</height>
         </rect>
@@ -659,8 +659,8 @@ color: rgb(206, 206, 206);</string>
       <widget class="QLineEdit" name="lineEdit_31">
        <property name="geometry">
         <rect>
-         <x>100</x>
-         <y>430</y>
+         <x>90</x>
+         <y>410</y>
          <width>81</width>
          <height>31</height>
         </rect>
@@ -683,8 +683,8 @@ color: rgb(206, 206, 206);</string>
       <widget class="QLabel" name="label_48">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>430</y>
+         <x>20</x>
+         <y>410</y>
          <width>71</width>
          <height>31</height>
         </rect>
@@ -1007,7 +1007,7 @@ color: rgb(206, 206, 206);</string>
        <property name="geometry">
         <rect>
          <x>630</x>
-         <y>430</y>
+         <y>410</y>
          <width>81</width>
          <height>31</height>
         </rect>
@@ -1331,8 +1331,8 @@ QTableWidget::item:hover {
       <widget class="QLineEdit" name="lineEdit_32">
        <property name="geometry">
         <rect>
-         <x>390</x>
-         <y>430</y>
+         <x>340</x>
+         <y>410</y>
          <width>81</width>
          <height>31</height>
         </rect>
@@ -1350,8 +1350,8 @@ QTableWidget::item:hover {
       <widget class="QLineEdit" name="lineEdit_33">
        <property name="geometry">
         <rect>
-         <x>160</x>
-         <y>430</y>
+         <x>90</x>
+         <y>410</y>
          <width>81</width>
          <height>31</height>
         </rect>
@@ -1369,8 +1369,8 @@ QTableWidget::item:hover {
       <widget class="QLabel" name="label_63">
        <property name="geometry">
         <rect>
-         <x>550</x>
-         <y>430</y>
+         <x>560</x>
+         <y>410</y>
          <width>71</width>
          <height>31</height>
         </rect>
@@ -1394,8 +1394,8 @@ color: rgb(206, 206, 206);</string>
       <widget class="QLabel" name="label_62">
        <property name="geometry">
         <rect>
-         <x>40</x>
-         <y>430</y>
+         <x>20</x>
+         <y>410</y>
          <width>71</width>
          <height>31</height>
         </rect>
@@ -1419,8 +1419,8 @@ color: rgb(206, 206, 206);</string>
       <widget class="QLabel" name="label_61">
        <property name="geometry">
         <rect>
-         <x>310</x>
-         <y>430</y>
+         <x>270</x>
+         <y>410</y>
          <width>71</width>
          <height>31</height>
         </rect>
@@ -1591,7 +1591,7 @@ color: rgb(223, 223, 223);</string>
        <property name="geometry">
         <rect>
          <x>630</x>
-         <y>430</y>
+         <y>410</y>
          <width>81</width>
          <height>31</height>
         </rect>
@@ -1931,8 +1931,8 @@ QTableWidget::item:hover {
       <widget class="QLineEdit" name="lineEdit_40">
        <property name="geometry">
         <rect>
-         <x>400</x>
-         <y>420</y>
+         <x>330</x>
+         <y>410</y>
          <width>81</width>
          <height>31</height>
         </rect>
@@ -1950,8 +1950,8 @@ QTableWidget::item:hover {
       <widget class="QLineEdit" name="lineEdit_41">
        <property name="geometry">
         <rect>
-         <x>180</x>
-         <y>430</y>
+         <x>90</x>
+         <y>410</y>
          <width>81</width>
          <height>31</height>
         </rect>
@@ -1969,8 +1969,8 @@ QTableWidget::item:hover {
       <widget class="QLabel" name="label_66">
        <property name="geometry">
         <rect>
-         <x>310</x>
-         <y>430</y>
+         <x>260</x>
+         <y>410</y>
          <width>71</width>
          <height>31</height>
         </rect>
@@ -1994,8 +1994,8 @@ color: rgb(206, 206, 206);</string>
       <widget class="QLabel" name="label_65">
        <property name="geometry">
         <rect>
-         <x>550</x>
-         <y>430</y>
+         <x>560</x>
+         <y>410</y>
          <width>71</width>
          <height>31</height>
         </rect>
@@ -2019,8 +2019,8 @@ color: rgb(206, 206, 206);</string>
       <widget class="QLabel" name="label_64">
        <property name="geometry">
         <rect>
-         <x>40</x>
-         <y>430</y>
+         <x>20</x>
+         <y>410</y>
          <width>71</width>
          <height>31</height>
         </rect>
@@ -2258,7 +2258,7 @@ border-radius: 10px;</string>
        <property name="geometry">
         <rect>
          <x>630</x>
-         <y>430</y>
+         <y>410</y>
          <width>81</width>
          <height>31</height>
         </rect>
@@ -2560,8 +2560,8 @@ QTableWidget::item:hover {
       <widget class="QLineEdit" name="lineEdit_34">
        <property name="geometry">
         <rect>
-         <x>400</x>
-         <y>430</y>
+         <x>340</x>
+         <y>410</y>
          <width>81</width>
          <height>31</height>
         </rect>
@@ -2579,8 +2579,8 @@ QTableWidget::item:hover {
       <widget class="QLineEdit" name="lineEdit_35">
        <property name="geometry">
         <rect>
-         <x>160</x>
-         <y>430</y>
+         <x>90</x>
+         <y>410</y>
          <width>81</width>
          <height>31</height>
         </rect>
@@ -2598,8 +2598,8 @@ QTableWidget::item:hover {
       <widget class="QLabel" name="label_69">
        <property name="geometry">
         <rect>
-         <x>300</x>
-         <y>430</y>
+         <x>270</x>
+         <y>410</y>
          <width>71</width>
          <height>31</height>
         </rect>
@@ -2623,8 +2623,8 @@ color: rgb(206, 206, 206);</string>
       <widget class="QLabel" name="label_67">
        <property name="geometry">
         <rect>
-         <x>30</x>
-         <y>430</y>
+         <x>20</x>
+         <y>410</y>
          <width>71</width>
          <height>31</height>
         </rect>
@@ -2648,8 +2648,8 @@ color: rgb(206, 206, 206);</string>
       <widget class="QLabel" name="label_68">
        <property name="geometry">
         <rect>
-         <x>540</x>
-         <y>430</y>
+         <x>560</x>
+         <y>410</y>
          <width>71</width>
          <height>31</height>
         </rect>
@@ -2742,8 +2742,8 @@ border-radius: 10px;</string>
       <widget class="QLineEdit" name="lineEdit_8">
        <property name="geometry">
         <rect>
-         <x>630</x>
-         <y>430</y>
+         <x>640</x>
+         <y>410</y>
          <width>81</width>
          <height>31</height>
         </rect>
@@ -3045,8 +3045,8 @@ color: rgb(223, 223, 223);</string>
       <widget class="QLineEdit" name="lineEdit_36">
        <property name="geometry">
         <rect>
-         <x>390</x>
-         <y>430</y>
+         <x>360</x>
+         <y>410</y>
          <width>81</width>
          <height>31</height>
         </rect>
@@ -3064,8 +3064,8 @@ color: rgb(223, 223, 223);</string>
       <widget class="QLineEdit" name="lineEdit_37">
        <property name="geometry">
         <rect>
-         <x>150</x>
-         <y>430</y>
+         <x>90</x>
+         <y>410</y>
          <width>81</width>
          <height>31</height>
         </rect>
@@ -3084,7 +3084,7 @@ color: rgb(223, 223, 223);</string>
        <property name="geometry">
         <rect>
          <x>290</x>
-         <y>430</y>
+         <y>410</y>
          <width>71</width>
          <height>31</height>
         </rect>
@@ -3108,8 +3108,8 @@ color: rgb(206, 206, 206);</string>
       <widget class="QLabel" name="label_71">
        <property name="geometry">
         <rect>
-         <x>530</x>
-         <y>430</y>
+         <x>570</x>
+         <y>410</y>
          <width>71</width>
          <height>31</height>
         </rect>
@@ -3134,7 +3134,7 @@ color: rgb(206, 206, 206);</string>
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>430</y>
+         <y>410</y>
          <width>71</width>
          <height>31</height>
         </rect>
@@ -3372,7 +3372,7 @@ border-radius: 10px;</string>
        <property name="geometry">
         <rect>
          <x>630</x>
-         <y>430</y>
+         <y>410</y>
          <width>81</width>
          <height>31</height>
         </rect>
@@ -3690,8 +3690,8 @@ QTableWidget::item:hover {
       <widget class="QLineEdit" name="lineEdit_38">
        <property name="geometry">
         <rect>
-         <x>400</x>
-         <y>430</y>
+         <x>360</x>
+         <y>410</y>
          <width>81</width>
          <height>31</height>
         </rect>
@@ -3709,8 +3709,8 @@ QTableWidget::item:hover {
       <widget class="QLineEdit" name="lineEdit_39">
        <property name="geometry">
         <rect>
-         <x>170</x>
-         <y>420</y>
+         <x>90</x>
+         <y>410</y>
          <width>81</width>
          <height>31</height>
         </rect>
@@ -3728,8 +3728,8 @@ QTableWidget::item:hover {
       <widget class="QLabel" name="label_75">
        <property name="geometry">
         <rect>
-         <x>300</x>
-         <y>420</y>
+         <x>290</x>
+         <y>410</y>
          <width>71</width>
          <height>31</height>
         </rect>
@@ -3753,8 +3753,8 @@ color: rgb(206, 206, 206);</string>
       <widget class="QLabel" name="label_74">
        <property name="geometry">
         <rect>
-         <x>540</x>
-         <y>420</y>
+         <x>560</x>
+         <y>410</y>
          <width>71</width>
          <height>31</height>
         </rect>
@@ -3778,8 +3778,8 @@ color: rgb(206, 206, 206);</string>
       <widget class="QLabel" name="label_73">
        <property name="geometry">
         <rect>
-         <x>30</x>
-         <y>420</y>
+         <x>20</x>
+         <y>410</y>
          <width>71</width>
          <height>31</height>
         </rect>
@@ -3872,8 +3872,8 @@ border-radius: 10px;</string>
       <widget class="QLineEdit" name="lineEdit_12">
        <property name="geometry">
         <rect>
-         <x>630</x>
-         <y>430</y>
+         <x>640</x>
+         <y>410</y>
          <width>81</width>
          <height>31</height>
         </rect>
@@ -4195,8 +4195,8 @@ color: rgb(223, 223, 223);</string>
       <widget class="QLineEdit" name="lineEdit_42">
        <property name="geometry">
         <rect>
-         <x>420</x>
-         <y>430</y>
+         <x>380</x>
+         <y>410</y>
          <width>81</width>
          <height>31</height>
         </rect>
@@ -4214,8 +4214,8 @@ color: rgb(223, 223, 223);</string>
       <widget class="QLineEdit" name="lineEdit_43">
        <property name="geometry">
         <rect>
-         <x>180</x>
-         <y>430</y>
+         <x>90</x>
+         <y>410</y>
          <width>81</width>
          <height>31</height>
         </rect>
@@ -4234,7 +4234,7 @@ color: rgb(223, 223, 223);</string>
        <property name="geometry">
         <rect>
          <x>310</x>
-         <y>430</y>
+         <y>410</y>
          <width>71</width>
          <height>31</height>
         </rect>
@@ -4258,8 +4258,8 @@ color: rgb(206, 206, 206);</string>
       <widget class="QLabel" name="label_77">
        <property name="geometry">
         <rect>
-         <x>550</x>
-         <y>430</y>
+         <x>570</x>
+         <y>410</y>
          <width>71</width>
          <height>31</height>
         </rect>
@@ -4283,8 +4283,8 @@ color: rgb(206, 206, 206);</string>
       <widget class="QLabel" name="label_76">
        <property name="geometry">
         <rect>
-         <x>40</x>
-         <y>430</y>
+         <x>20</x>
+         <y>410</y>
          <width>71</width>
          <height>31</height>
         </rect>
