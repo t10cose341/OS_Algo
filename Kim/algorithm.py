@@ -34,7 +34,7 @@ def SJF(tasks):
         tasks (list of Task)
     """
     # arrival_time 기준으로 sorting.
-    tasks = sorted(tasks, key = lambda x: (x.arrival_time))
+    tasks = sorted(tasks, key = lambda x: (x.arrival_time, x.burst_time))
     gant = Gant_chart()
     current_time = 0
 
@@ -163,7 +163,7 @@ def priority(tasks):
         tasks (list of Task)
     """
     # arrival_time 기준으로 sorting.
-    tasks = sorted(tasks, key = lambda x: (x.arrival_time))
+    tasks = sorted(tasks, key = lambda x: (x.arrival_time, x.priority))
     gant = Gant_chart()
     current_time = 0
 
@@ -243,7 +243,7 @@ def priority_RR(tasks, t_q):
         t_q (float) : time quantum
     """
     # arrival_time 기준으로 sorting.
-    tasks = sorted(tasks, key = lambda x: (x.arrival_time))
+    tasks = sorted(tasks, key = lambda x: (x.arrival_time, x.priority))
     gant = Gant_chart()
     current_time = 0
 
