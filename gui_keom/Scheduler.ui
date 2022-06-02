@@ -271,6 +271,7 @@ border-radius: 10px;</string>
       </property>
       <property name="font">
        <font>
+        <family>Arial</family>
         <pointsize>9</pointsize>
         <weight>75</weight>
         <bold>true</bold>
@@ -392,6 +393,7 @@ color: rgb(206, 206, 206);</string>
        </property>
        <property name="font">
         <font>
+         <family>Arial</family>
          <pointsize>9</pointsize>
         </font>
        </property>
@@ -618,6 +620,7 @@ QTableWidget::item:hover {
        </property>
        <property name="font">
         <font>
+         <family>Arial</family>
          <pointsize>9</pointsize>
         </font>
        </property>
@@ -667,6 +670,7 @@ color: rgb(206, 206, 206);</string>
        </property>
        <property name="font">
         <font>
+         <family>Arial</family>
          <pointsize>9</pointsize>
         </font>
        </property>
@@ -800,6 +804,11 @@ border-radius:0px;
         <height>361</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+       </font>
+      </property>
       <property name="accessibleName">
        <string>0</string>
       </property>
@@ -926,6 +935,7 @@ border-radius:0px;
       </property>
       <property name="font">
        <font>
+        <family>Arial</family>
         <pointsize>9</pointsize>
         <weight>75</weight>
         <bold>true</bold>
@@ -946,6 +956,11 @@ border-radius: 10px;</string>
          <width>691</width>
          <height>141</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(194, 194, 194);</string>
@@ -1012,6 +1027,11 @@ color: rgb(206, 206, 206);</string>
          <height>31</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(194, 194, 194);</string>
        </property>
@@ -1064,6 +1084,7 @@ color: rgb(206, 206, 206);</string>
        </property>
        <property name="font">
         <font>
+         <family>Arial</family>
          <pointsize>10</pointsize>
          <weight>75</weight>
          <bold>true</bold>
@@ -1120,6 +1141,7 @@ color: rgb(206, 206, 206);</string>
        </property>
        <property name="font">
         <font>
+         <family>Arial</family>
          <pointsize>10</pointsize>
         </font>
        </property>
@@ -1337,6 +1359,11 @@ QTableWidget::item:hover {
          <height>31</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(194, 194, 194);</string>
        </property>
@@ -1355,6 +1382,11 @@ QTableWidget::item:hover {
          <width>81</width>
          <height>31</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(194, 194, 194);</string>
@@ -1531,6 +1563,11 @@ border-radius: 10px;</string>
          <height>141</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(194, 194, 194);</string>
        </property>
@@ -1596,6 +1633,11 @@ color: rgb(223, 223, 223);</string>
          <height>31</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(194, 194, 194);</string>
        </property>
@@ -1648,6 +1690,7 @@ color: rgb(223, 223, 223);</string>
        </property>
        <property name="font">
         <font>
+         <family>Arial</family>
          <pointsize>10</pointsize>
          <weight>75</weight>
          <bold>true</bold>
@@ -1704,6 +1747,7 @@ color: rgb(223, 223, 223);</string>
        </property>
        <property name="font">
         <font>
+         <family>Arial</family>
          <pointsize>10</pointsize>
         </font>
        </property>
@@ -1937,6 +1981,11 @@ QTableWidget::item:hover {
          <height>31</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(194, 194, 194);</string>
        </property>
@@ -1955,6 +2004,11 @@ QTableWidget::item:hover {
          <width>81</width>
          <height>31</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(194, 194, 194);</string>
@@ -2056,6 +2110,11 @@ color: rgb(206, 206, 206);</string>
         <height>361</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+       </font>
+      </property>
       <property name="accessibleName">
        <string>0</string>
       </property>
@@ -2141,6 +2200,7 @@ color: rgb(223, 223, 223);</string>
        </property>
        <property name="font">
         <font>
+         <family>Arial</family>
          <pointsize>10</pointsize>
          <weight>75</weight>
          <bold>true</bold>
@@ -2229,6 +2289,7 @@ border-radius:0px;
       </property>
       <property name="font">
        <font>
+        <family>Arial</family>
         <pointsize>9</pointsize>
         <weight>75</weight>
         <bold>true</bold>
@@ -2250,6 +2311,11 @@ border-radius: 10px;</string>
          <height>141</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(194, 194, 194);</string>
        </property>
@@ -2262,6 +2328,11 @@ border-radius: 10px;</string>
          <width>81</width>
          <height>31</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(194, 194, 194);</string>
@@ -2284,6 +2355,7 @@ border-radius: 10px;</string>
        </property>
        <property name="font">
         <font>
+         <family>Arial</family>
          <pointsize>10</pointsize>
          <weight>75</weight>
          <bold>true</bold>
@@ -2566,6 +2638,11 @@ QTableWidget::item:hover {
          <height>31</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(194, 194, 194);</string>
        </property>
@@ -2584,6 +2661,11 @@ QTableWidget::item:hover {
          <width>81</width>
          <height>31</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(194, 194, 194);</string>
@@ -2714,6 +2796,7 @@ color: rgb(206, 206, 206);</string>
       </property>
       <property name="font">
        <font>
+        <family>Arial</family>
         <pointsize>9</pointsize>
         <weight>75</weight>
         <bold>true</bold>
@@ -2735,6 +2818,11 @@ border-radius: 10px;</string>
          <height>141</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(194, 194, 194);</string>
        </property>
@@ -2747,6 +2835,11 @@ border-radius: 10px;</string>
          <width>81</width>
          <height>31</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(194, 194, 194);</string>
@@ -2769,6 +2862,7 @@ border-radius: 10px;</string>
        </property>
        <property name="font">
         <font>
+         <family>Arial</family>
          <pointsize>10</pointsize>
          <weight>75</weight>
          <bold>true</bold>
@@ -3051,6 +3145,11 @@ color: rgb(223, 223, 223);</string>
          <height>31</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(194, 194, 194);</string>
        </property>
@@ -3069,6 +3168,11 @@ color: rgb(223, 223, 223);</string>
          <width>81</width>
          <height>31</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(194, 194, 194);</string>
@@ -3170,6 +3274,11 @@ color: rgb(206, 206, 206);</string>
         <height>361</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+       </font>
+      </property>
       <property name="accessibleName">
        <string>0</string>
       </property>
@@ -3255,6 +3364,7 @@ color: rgb(223, 223, 223);</string>
        </property>
        <property name="font">
         <font>
+         <family>Arial</family>
          <pointsize>10</pointsize>
          <weight>75</weight>
          <bold>true</bold>
@@ -3343,6 +3453,7 @@ border-radius:0px;
       </property>
       <property name="font">
        <font>
+        <family>Arial</family>
         <pointsize>9</pointsize>
         <weight>75</weight>
         <bold>true</bold>
@@ -3364,6 +3475,11 @@ border-radius: 10px;</string>
          <height>141</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(194, 194, 194);</string>
        </property>
@@ -3376,6 +3492,11 @@ border-radius: 10px;</string>
          <width>81</width>
          <height>31</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(194, 194, 194);</string>
@@ -3398,6 +3519,7 @@ border-radius: 10px;</string>
        </property>
        <property name="font">
         <font>
+         <family>Arial</family>
          <pointsize>10</pointsize>
          <weight>75</weight>
          <bold>true</bold>
@@ -3696,6 +3818,11 @@ QTableWidget::item:hover {
          <height>31</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(194, 194, 194);</string>
        </property>
@@ -3714,6 +3841,11 @@ QTableWidget::item:hover {
          <width>81</width>
          <height>31</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(194, 194, 194);</string>
@@ -3844,6 +3976,7 @@ color: rgb(206, 206, 206);</string>
       </property>
       <property name="font">
        <font>
+        <family>Arial</family>
         <pointsize>9</pointsize>
         <weight>75</weight>
         <bold>true</bold>
@@ -3865,6 +3998,11 @@ border-radius: 10px;</string>
          <height>141</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(194, 194, 194);</string>
        </property>
@@ -3877,6 +4015,11 @@ border-radius: 10px;</string>
          <width>81</width>
          <height>31</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(194, 194, 194);</string>
@@ -3899,6 +4042,7 @@ border-radius: 10px;</string>
        </property>
        <property name="font">
         <font>
+         <family>Arial</family>
          <pointsize>10</pointsize>
          <weight>75</weight>
          <bold>true</bold>
@@ -4201,6 +4345,11 @@ color: rgb(223, 223, 223);</string>
          <height>31</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(194, 194, 194);</string>
        </property>
@@ -4219,6 +4368,11 @@ color: rgb(223, 223, 223);</string>
          <width>81</width>
          <height>31</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(194, 194, 194);</string>
